@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "traineeUser",
+    "password": "traineePassword",
+    "database": "christiandb",
+    "host": "143.110.208.231",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "traineeUser",
+    "password": "traineePassword",
+    "database": "christiandb",
+    "host": "143.110.208.231",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "traineeUser",
+    "password": "traineePassword",
+    "database": "christiandb",
+    "host": "143.110.208.231",
+    "dialect": "postgres"
+  }
+}

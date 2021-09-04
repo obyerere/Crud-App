@@ -1,0 +1,65 @@
+<%- include('./partials/header') %>
+	<!-- main Content Starts -->
+	<div>
+		<div >
+			<div>
+				<form action="/create/new" method="POST">
+					<div class="modal-header">						
+						<h4 class="modal-title">Add New User</h4>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label>Name</label>
+							<input type="text" name="fullname" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Age</label>
+							<input type="number" name="age" class="form-control" required>
+						</div>
+
+						<div class="form-group">
+							<label>Department</label>
+							<select class="custom-select" name="department">
+								<option selected>Select Department</option>
+								<option value="Accounting">Accounting</option>
+								<option value="Engineering">Engineering</option>
+								<option value="Management">Management</option>
+								<option value="Security">Security</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label>Role</label>
+							<select class="custom-select" name="role">
+								<option selected>Select Role</option>
+								<option value="QA">QA</option>
+								<option value="DEV">DEV</option>
+								<option value="PM">PM</option>
+								<option value="BA">BA</option>
+								<option value="Support">Support</option>
+								<option value="Audit">Audit</option>
+							</select>
+						</div>
+<!-- 						<div class="form-group">
+							<label>Role</label>
+							<input type="text" name="role" class="form-control" required>
+						</div> -->
+						
+						<div class="form-group">
+							<label>Status</label>
+							<select class="custom-select" name="status">
+								<option selected>Select Status</option>
+								<option value="Activated">Activated</option>
+								<option value="Pending">Pending</option>
+								<option value="Cancelled">Cancelled</option>
+							</select>
+						</div>
+
+					</div>
+					<input type="submit" class="btn btn-success" value="Add User">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- main Content Ends -->
+<%- include('./partials/footer') %>

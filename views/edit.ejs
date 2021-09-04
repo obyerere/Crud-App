@@ -1,0 +1,63 @@
+<!-- We are importing the header partial -->
+<%- include('./partials/header.ejs') %>
+	<!-- main Content Starts -->
+	<div>
+		<div>
+			<div>
+				<!-- We are dynamically defining the action, this is the route we want the form to be submitted to when we click the button -->
+				<form action="/edituser/<%= user.id  %>" method="POST">
+					<div class="modal-header">						
+						<h4 class="modal-title">Update User</h4>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label>Name</label>
+							<!-- the value attribute will display a default value on the input field -->
+							<input type="text" name="fullname" value="<%= user.name %>" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Age</label>
+							<input type="number" name="age" value="<%= user.age %>" class="form-control" required>
+						</div>
+
+						<div class="form-group">
+							<label>Department</label>
+							<select class="custom-select" name="department">
+								<option selected>Select Department</option>
+								<!--  
+									"Accounting" === user.department ? "selected" : ''
+									This condition means that if the string Accounting is equal to the user.department. print the attribute selected else print nothing
+									Remember we passed the user object from the controllers/indexController
+								-->
+								<option value="Accounting" <%= "Accounting" === user.department ? "selected" : '' %> >Accounting</option>
+								<option value="Engineering" <%= "Engineering" === user.department ? "selected" : '' %>>Engineering</option>
+								<option value="Management" <%= "Management" === user.department ? "selected" : '' %>>Management</option>
+								<option value="Security" <%= "Security" === user.department ? "selected" : '' %>>Security</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label>Role</label>
+							<input type="text" value="<%= user.role %>" name="role" class="form-control" required>
+						</div>
+						
+						<div class="form-group">
+							<label>Status</label>
+							<select class="custom-select" name="status">
+								<option selected>Select Status</option>
+								<option value="Activated" <%= "Activated" === user.status ? "selected" : '' %>>Activated</option>
+								<option value="Pending" <%= "Pending" === user.status ? "selected" : '' %>>Pending</option>
+								<option value="Cancelled" <%= "Cancelled" === user.status ? "selected" : '' %>>Cancelled</option>
+							</select>
+						</div>
+
+					</div>
+					<input type="submit" class="btn btn-success" value="Update User">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- main Content Ends -->
+<%- include('./partials/footer') %>
+<!-- We are importing the footer partial -->
+
